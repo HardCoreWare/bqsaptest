@@ -29,14 +29,8 @@ echo('<table>');
 foreach ($tablaCuentas as $fila) {
 
     echo('<tr>');
-
-    foreach ($fila as $celda) {
-
-        echo('<td>'.$celda.'</td>');
-
-    }
-
-
+    echo('<td>'.$fila['CUENTA'].'</td>');
+    echo('<td>'.$fila['MONTO'].'</td>');
     echo('</tr>');
 
 
