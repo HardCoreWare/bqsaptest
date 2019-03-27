@@ -8,4 +8,6 @@ $dml = "SELECT DISTINCT(HKONT) AS CUENTAS FROM `informe-211921.BALANZA.BSEG_2019
 
 $cuentas = $bigQuery->select($dml);
 
+print_r($cuentas);
+
 ?>
