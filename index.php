@@ -17,7 +17,7 @@ foreach ($cuentas as $cuenta) {
     $dmlArray[]=$dml;
 }
 
-$uniquery = implode(" UNION ALL ");
+$uniquery = implode(" UNION ALL ", $dml1);
 
 echo($uniquery);
 
