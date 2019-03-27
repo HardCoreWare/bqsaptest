@@ -26,6 +26,7 @@ $uniquery = implode(" UNION ALL ", $dmlArray);
 $tablaCuentas =$bigQuery->select($uniquery);
 
 echo('<table>');
+echo('<tr><th>CUENTA</th>th>MONTO</th></tr>');
 foreach ($tablaCuentas as $fila) {
 
     echo('<tr>');
