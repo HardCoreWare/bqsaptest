@@ -25,7 +25,11 @@ $uniquery = implode(" UNION ALL ", $dmlArray);
 
 $tablaCuentas =$bigQuery->select($uniquery);
 
-print_r($tablaCuentas);
+
+
+foreach ($tablaCuentas as $col) {
+    # code...
+}
 
 
 
