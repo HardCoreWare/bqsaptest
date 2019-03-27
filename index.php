@@ -9,8 +9,15 @@
     <script src="main.js"></script>
 </head>
 <body>
+    <div class="container">
     
-<?php
+    
+        <div class="row">
+        
+        
+            <div class="col">
+            
+            <?php
 
 require_once 'libs/BigQuery.php' ;
 
@@ -53,6 +60,23 @@ echo('</table>');
 
 
 ?>
+
+            
+            </div>
+        
+        
+        </div>
+    
+    
+    </div>
+
+
+
+
+
+
+
+
 
 </body>
 </html>
