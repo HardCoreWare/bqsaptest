@@ -17,7 +17,7 @@
         
             <div class="col">
             
-            <?php
+<?php
 
 require_once 'libs/BigQuery.php' ;
 
@@ -57,7 +57,6 @@ foreach ($tablaCuentas as $fila) {
 }
 
 echo('</table>');
-
 
 ?>
 
