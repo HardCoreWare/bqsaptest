@@ -15,7 +15,7 @@
 
 require_once 'libs/BigQuery.php' ;
 
-function testTable($month){
+function testTable($title,$month){
 
     $bigQuery= new BigQuery('informe-211921');
 
@@ -47,7 +47,7 @@ function testTable($month){
             <!-- Area Chart -->
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Bar Chart</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">'.$title.'</h6>
                 </div>
                 <div class="card-body">');
 
@@ -73,7 +73,7 @@ function testTable($month){
 
 }
 
-testTable('1');
+testTable('ok','1');
 
 ?>
 
