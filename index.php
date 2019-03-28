@@ -41,7 +41,7 @@ function testTable($title,$month){
     $tablaCuentas =$bigQuery->select($uniquery);
 
 
-    echo('<div class="container-fluid">
+    echo('
         <div class="col-4">
             <!-- Area Chart -->
             <div class="card shadow mb-4">
@@ -65,18 +65,18 @@ function testTable($title,$month){
 
 
     echo('                
-        </div>
+        
 </div>');
 
 
 }
 
 
-echo('<div class="row">');
+echo('<div class="container-fluid"><div class="row">');
 testTable('ok','1');
 testTable('ok','2');
 testTable('ok','3');
-echo('</div>');
+echo('</div></div>');
 
 ?>
 
