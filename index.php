@@ -82,7 +82,7 @@ function testTable($title,$month,$concepts){
                 </div>
                     <div class="card-body">');
 
-                    echo('<table class="table table-bordered table-dark">');
+                    echo('<table class="table table-bordered">');
                     echo('<tr><th>CUENTA</th><th>MONTO</th></tr>');
 
                     $total=0;
