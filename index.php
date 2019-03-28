@@ -6,14 +6,9 @@ require_once 'libs/BigQuery.php' ;
 $bigQuery= new BigQuery('informe-211921');
 
 
-class Test{
+        $dml0 = "SELECT DISTINCT(HKONT) AS CUENTAS FROM `informe-211921.BALANZA.BSEG_2019_".$month."` WHERE KOSTL IN('1020100303','5020100303') AND SUBSTR(HKONT,1,1) = '6'";
 
-
-    public static function testTable($month){
-
-        $dml = "SELECT DISTINCT(HKONT) AS CUENTAS FROM `informe-211921.BALANZA.BSEG_2019_".$month."` WHERE KOSTL IN('1020100303','5020100303') AND SUBSTR(HKONT,1,1) = '6'";
-
-        $cuentas = $bigQuery->select($dml);
+        $cuentas = $bigQuery->select($dml0);
 
         //print_r($cuentas);
 
@@ -45,11 +40,8 @@ class Test{
 
         echo('</table>');
 
-    }
 
-}
 
-Test::testTable('1');
 
 ?>
 
