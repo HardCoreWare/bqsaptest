@@ -41,14 +41,13 @@ function testTable($title,$month){
     $tablaCuentas =$bigQuery->select($uniquery);
 
 
-    echo('
-        <div class="col-4">
-            <!-- Area Chart -->
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">'.$title.'</h6>
-                </div>
-                <div class="card-body">');
+    echo('        <div class="col-6">
+    <!-- Area Chart -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Bar Chart</h6>
+        </div>
+        <div class="card-body">');
 
     echo('<table>');
     echo('<tr><th>CUENTA</th><th>MONTO</th></tr>');
@@ -64,19 +63,24 @@ function testTable($title,$month){
     echo('</table>');
 
 
-    echo('                
-        
+    echo('                </div>
+    </div>
 </div>');
 
 
 }
 
+echo('<div class="container-fluid">
+<div class="row">');
 
-echo('<div class="container-fluid"><div class="row">');
+
 testTable('ok','1');
 testTable('ok','2');
 testTable('ok','3');
-echo('</div></div>');
+
+
+echo('</div>
+</div>');
 
 ?>
 
