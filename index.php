@@ -55,30 +55,32 @@ function testTable($title,$month){
                 </div>
                     <div class="card-body">');
 
-    echo('<table class="table table-striped">');
-    echo('<tr><th>CUENTA</th><th>MONTO</th></tr>');
+                    echo('<table class="table table-striped">');
+                    echo('<tr><th>CUENTA</th><th>MONTO</th></tr>');
 
-    $total=0;
-    foreach ($tablaCuentas as $fila) {
+                    $total=0;
+                    foreach ($tablaCuentas as $fila) {
 
-        echo('<tr>');
-        echo('<td>'.$fila['CUENTA'].'</td>');
-        echo('<td>'.$fila['MONTO'].'</td>');
-        echo('</tr>');
+                        echo('<tr>');
+                        echo('<td>'.$fila['CUENTA'].'</td>');
+                        echo('<td>'.$fila['MONTO'].'</td>');
+                        echo('</tr>');
 
-        $total+=floatval($fila['MONTO']);
+                        $total+=floatval($fila['MONTO']);
 
-    }
+                    }
 
-    echo('<tr><th>TOTAL</th><th>'.strval($total).'</th></tr>');
-    $total=0;
+                    echo('<tr><th>TOTAL</th><th>'.strval($total).'</th></tr>');
+                    $total=0;
 
-    echo('</table>');
+                    echo('</table>');
 
     echo('
+    
             </div>
         </div>
     </div>'
+
     );
 
 
