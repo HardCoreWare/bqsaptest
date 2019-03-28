@@ -85,9 +85,9 @@ function testTable($title,$month){
 
 }
 
-testTable('Country Ene ','1');
-testTable('Country Feb ','2');
-testTable('Country Mar ','3');
+testTable('COUNTRY ENE ','1');
+testTable('COUNTRY FEB ','2');
+testTable('COUNTRY MAR ','3');
 
 ?>
 
