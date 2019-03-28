@@ -51,6 +51,8 @@ function testTable($title,$month){
 
     echo('<table class="table">');
     echo('<tr><th>CUENTA</th><th>MONTO</th></tr>');
+
+    $total=0;
     foreach ($tablaCuentas as $fila) {
 
         echo('<tr>');
@@ -58,7 +60,12 @@ function testTable($title,$month){
         echo('<td>'.$fila['MONTO'].'</td>');
         echo('</tr>');
 
+        $total+=floatval($fila['MONTO']);
+
     }
+
+    echo('<tr><th>TOTAL</th><th>'.strval($total).'</th></tr>');
+    $total=0;
 
     echo('</table>');
 
