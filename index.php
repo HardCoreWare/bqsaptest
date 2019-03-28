@@ -74,9 +74,9 @@ echo('<div class="container-fluid">
 <div class="row">');
 
 
-testTable('Cuentas Enero Centros de Costo : 1020100303,5020100303 ','1');
-testTable('ok','2');
-testTable('ok','3');
+testTable('Cuentas en Centros de Costo (Enero) : 1020100303,5020100303 ','1');
+testTable('Cuentas en Centros de Costo (Enero) : 1020100303,5020100303 ','2');
+testTable('Cuentas en Centros de Costo (Enero) : 1020100303,5020100303 ','3');
 
 
 echo('</div>
