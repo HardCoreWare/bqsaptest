@@ -42,7 +42,7 @@ function testTable($title,$month){
 
 
     echo('<div class="container-fluid">
-        <div class="col-6">
+        <div class="col-4">
             <!-- Area Chart -->
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
