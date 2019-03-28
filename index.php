@@ -22,7 +22,6 @@ require_once 'libs/BigQuery.php' ;
 
 
 
-
 function testTable($title,$month){
 
     $bigQuery= new BigQuery('informe-211921');
@@ -43,6 +42,8 @@ function testTable($title,$month){
     }
 
     $uniquery = implode(" UNION ALL ", $dmlArray);
+
+
 
     $tablaCuentas =$bigQuery->select($uniquery);
 
