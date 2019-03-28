@@ -41,11 +41,11 @@ function testTable($title,$month){
     $tablaCuentas =$bigQuery->select($uniquery);
 
 
-    echo('        <div class="col-6">
+    echo('        <div class="col-4">
     <!-- Area Chart -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Bar Chart</h6>
+            <h6 class="m-0 font-weight-bold text-primary">'.$title.'</h6>
         </div>
         <div class="card-body">');
 
