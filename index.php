@@ -3,42 +3,49 @@
 
 require_once 'libs/BigQuery.php' ;
 
-$bigQuery= new BigQuery('informe-211921');
+function testTable($month){
 
 
-        $dml0 = "SELECT DISTINCT(HKONT) AS CUENTAS FROM `informe-211921.BALANZA.BSEG_2019_".$month."` WHERE KOSTL IN('1020100303','5020100303') AND SUBSTR(HKONT,1,1) = '6'";
+    $bigQuery= new BigQuery('informe-211921');
 
-        $cuentas = $bigQuery->select($dml0);
+    $dml0 = "SELECT DISTINCT(HKONT) AS CUENTAS FROM `informe-211921.BALANZA.BSEG_2019_".$month."` WHERE KOSTL IN('1020100303','5020100303') AND SUBSTR(HKONT,1,1) = '6'";
 
-        //print_r($cuentas);
+    $cuentas = $bigQuery->select($dml0);
 
-        $dmlArray=[];
+    //print_r($cuentas);
 
-        foreach ($cuentas as $cuenta) {
+    $dmlArray=[];
 
-            //echo($cuenta['CUENTAS']);
+    foreach ($cuentas as $cuenta) {
 
-            $dml1="SELECT ROUND(SUM(CAST(DMBTR AS FLOAT64)), 2) AS MONTO, '".$cuenta['CUENTAS']."' AS CUENTA FROM `informe-211921.BALANZA.BSEG_2019_".$month."` WHERE KOSTL IN('1020100303','5020100303') AND HKONT = '".$cuenta['CUENTAS']."' ";
+        //echo($cuenta['CUENTAS']);
 
-            $dmlArray[]=$dml1;
-        }
+        $dml1="SELECT ROUND(SUM(CAST(DMBTR AS FLOAT64)), 2) AS MONTO, '".$cuenta['CUENTAS']."' AS CUENTA FROM `informe-211921.BALANZA.BSEG_2019_".$month."` WHERE KOSTL IN('1020100303','5020100303') AND HKONT = '".$cuenta['CUENTAS']."' ";
 
-        $uniquery = implode(" UNION ALL ", $dmlArray);
+        $dmlArray[]=$dml1;
+    }
 
-        $tablaCuentas =$bigQuery->select($uniquery);
+    $uniquery = implode(" UNION ALL ", $dmlArray);
 
-        echo('<table>');
-        echo('<tr><th>CUENTA</th><th>MONTO</th></tr>');
-        foreach ($tablaCuentas as $fila) {
+    $tablaCuentas =$bigQuery->select($uniquery);
 
-            echo('<tr>');
-            echo('<td>'.$fila['CUENTA'].'</td>');
-            echo('<td>'.$fila['MONTO'].'</td>');
-            echo('</tr>');
+    echo('<table>');
+    echo('<tr><th>CUENTA</th><th>MONTO</th></tr>');
+    foreach ($tablaCuentas as $fila) {
 
-        }
+        echo('<tr>');
+        echo('<td>'.$fila['CUENTA'].'</td>');
+        echo('<td>'.$fila['MONTO'].'</td>');
+        echo('</tr>');
 
-        echo('</table>');
+    }
+
+    echo('</table>');
+
+
+
+}
+
 
 
 
