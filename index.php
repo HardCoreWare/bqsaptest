@@ -20,9 +20,34 @@
 
 require_once 'libs/BigQuery.php' ;
 
+$conceptos=[
+"6101000000"=>	  "INTS POR DEP DE EXIGIBILIDAD INM",
+"6102000000"=>	  "INTS POR DEPOSITOS A PLAZO",
+"6390020300"=>	  "OTRAS COMISIONES BANCARIAS",
+"6402020000"=>	  "HONORARIOS PERSONAS MORALES",
+"6403020100"=>	  "RENTAS INMUEBLES SOCIEDADES ANONIMAS",
+"6404010000"=>	  "MEDIOS MASIVOS RADIO Y TELEVISION",
+"6410010102"=>	  "SUELDOS Y SALARIOS",
+"6410010103"=>	  "AGUINALDO",
+"6410010104"=>	  "BONOS",
+"6410010107"=>	  "SEGUROS DE VIDA",
+"6410010108"=>	  "SEGUROS DE GASTOS MEDICOS",
+"6410010111"=>	  "CUOTAS AL IMSS",
+"6410010112"=>	  "APORTACIONES AL INFONAVIT",
+"6410010113"=>	  "PRIMA DE VACACIONES",
+"6410010115"=>	  "VALES DE DESPENSA",
+"6410010125"=>	  "2% SOBRE NOMINAS",
+"6491070000"=>	  "SEGUROS",
+"6491090000"=>	  "LUZ Y AGUA",
+"6491240100"=>	  "ENLACES VOZ, DATOS Y RED CON SUCURSALES",
+"6491250000"=>	  "MANT INMUEBLES",
+"6491310000"=>	  "VIGILANCIA",
+"6491330000"=>	  "OTROS",
+];
 
 
-function testTable($title,$month){
+
+function testTable($title,$month,$concepts){
 
     $bigQuery= new BigQuery('informe-211921');
     $dml0 = "SELECT DISTINCT(HKONT) AS CUENTAS FROM `informe-211921.BALANZA.BSEG_2019_".$month."` WHERE ".
@@ -85,15 +110,13 @@ function testTable($title,$month){
 
     );
 
-
-
 $bigQuery=null;
 
 }
 
-testTable('COUNTRY ENE ','1');
-testTable('COUNTRY FEB ','2');
-testTable('COUNTRY MAR ','3');
+testTable('COUNTRY ENE ','1',$conceptos);
+testTable('COUNTRY FEB ','2',$conceptos);
+testTable('COUNTRY MAR ','3',$conceptos);
 
 ?>
 
