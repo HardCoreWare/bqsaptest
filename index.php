@@ -74,6 +74,8 @@ function testTable($title,$month){
 
 echo('<div class="row">');
 testTable('ok','1');
+testTable('ok','2');
+testTable('ok','3');
 echo('</div>');
 
 ?>
