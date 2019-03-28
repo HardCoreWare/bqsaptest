@@ -49,7 +49,7 @@ class Test{
 
 }
 
-testTable('1');
+Test::testTable('1');
 
 ?>
 
