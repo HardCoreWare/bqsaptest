@@ -45,7 +45,7 @@ function testTable($month){
 }
 
 
-testTable($month);
+testTable('1');
 
 ?>
 
