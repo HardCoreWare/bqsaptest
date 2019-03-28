@@ -90,6 +90,7 @@ function testTable($title,$month,$concepts){
 
                         echo('<tr>');
                         echo('<td>'.$fila['CUENTA'].'</td>');
+                        echo('<td>'.$conceptos[$fila['CUENTA']].'</td>');
                         echo('<td>'.$fila['MONTO'].'</td>');
                         echo('</tr>');
 
