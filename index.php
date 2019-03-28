@@ -86,7 +86,7 @@ function testTable($title,$month){
 
 
 
-
+$bigQuery=null;
 
 }
 
