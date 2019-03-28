@@ -84,9 +84,9 @@ function testTable($title,$month){
 
 }
 
-testTable('Cuentas Mayores (que inician con 6...) con Centros de Costo : 1020100303,5020100303  (Enero) ','1');
-testTable('Cuentas Mayores (que inician con 6...) con Centros de Costo : 1020100303,5020100303  (Febrero) ','2');
-testTable('Cuentas Mayores (que inician con 6...) con Centros de Costo : 1020100303,5020100303  (Marzo) ','3');
+testTable('(Enero) ','1');
+testTable('(Febrero) ','2');
+testTable('(Marzo) ','3');
 
 ?>
 
