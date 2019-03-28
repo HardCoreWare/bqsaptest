@@ -49,7 +49,7 @@ function testTable($title,$month){
         </div>
         <div class="card-body">');
 
-    echo('<table>');
+    echo('<table class="table">');
     echo('<tr><th>CUENTA</th><th>MONTO</th></tr>');
     foreach ($tablaCuentas as $fila) {
 
