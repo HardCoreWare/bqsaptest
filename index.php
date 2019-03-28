@@ -11,6 +11,11 @@
 </head>
 <body>
 
+
+
+<div class="container-fluid">
+<div class="row">
+
 <?php
 
 require_once 'libs/BigQuery.php' ;
@@ -41,15 +46,16 @@ function testTable($title,$month){
     $tablaCuentas =$bigQuery->select($uniquery);
 
 
-    echo('        <div class="col-4">
-    <!-- Area Chart -->
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">'.$title.'</h6>
-        </div>
-        <div class="card-body">');
+    echo('        
+    
+    <div class="col-4">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">'.$title.'</h6>
+                </div>
+                    <div class="card-body">');
 
-    echo('<table class="table">');
+    echo('<table class="table table-striped">');
     echo('<tr><th>CUENTA</th><th>MONTO</th></tr>');
 
     $total=0;
@@ -69,31 +75,23 @@ function testTable($title,$month){
 
     echo('</table>');
 
-
-    echo('                </div>
-    </div>
-</div>');
+    echo('
+            </div>
+        </div>
+    </div>'
+    );
 
 
 }
-
-echo('<div class="container-fluid">
-<div class="row">');
-
 
 testTable('Cuentas Mayores (que inician con 6...) con Centros de Costo : 1020100303,5020100303  (Enero) ','1');
 testTable('Cuentas Mayores (que inician con 6...) con Centros de Costo : 1020100303,5020100303  (Febrero) ','2');
 testTable('Cuentas Mayores (que inician con 6...) con Centros de Costo : 1020100303,5020100303  (Marzo) ','3');
 
-
-echo('</div>
-</div>');
-
 ?>
 
-
-
-
+</div>
+</div>
 
 
 
