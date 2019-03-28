@@ -20,6 +20,9 @@
 
 require_once 'libs/BigQuery.php' ;
 
+
+
+
 function testTable($title,$month){
 
     $bigQuery= new BigQuery('informe-211921');
@@ -33,7 +36,6 @@ function testTable($title,$month){
 
     foreach ($cuentas as $cuenta) {
 
-        //echo($cuenta['CUENTAS']);
 
         $dml1="SELECT ROUND(SUM(CAST(DMBTR AS FLOAT64)), 2) AS MONTO, '".$cuenta['CUENTAS']."' AS CUENTA FROM `informe-211921.BALANZA.BSEG_2019_".$month."` WHERE KOSTL IN('1020100303','5020100303') AND HKONT = '".$cuenta['CUENTAS']."' ";
 
@@ -47,14 +49,14 @@ function testTable($title,$month){
 
     echo('        
     
-    <div class="col-4">
+    <div class="col-12">
         <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">'.$title.'</h6>
                 </div>
                     <div class="card-body">');
 
-                    echo('<table class="table table-bordered">');
+                    echo('<table class="table table-bordered table-dark">');
                     echo('<tr><th>CUENTA</th><th>MONTO</th></tr>');
 
                     $total=0;
@@ -81,6 +83,9 @@ function testTable($title,$month){
     </div>'
 
     );
+
+
+
 
 
 }
