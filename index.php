@@ -1,4 +1,16 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>TITLE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
 <?php
 
 require_once 'libs/BigQuery.php' ;
@@ -28,6 +40,17 @@ function testTable($month){
 
     $tablaCuentas =$bigQuery->select($uniquery);
 
+
+    echo('<div class="container-fluid">
+    <div class="row">
+        <div class="col-6">
+            <!-- Area Chart -->
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Bar Chart</h6>
+                </div>
+                <div class="card-body">');
+
     echo('<table>');
     echo('<tr><th>CUENTA</th><th>MONTO</th></tr>');
     foreach ($tablaCuentas as $fila) {
@@ -42,12 +65,15 @@ function testTable($month){
     echo('</table>');
 
 
+    echo('                
+        </div>
+    </div>
+</div>');
+
 
 }
 
 testTable('1');
-testTable('2');
-testTable('3');
 
 ?>
 
