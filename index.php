@@ -83,7 +83,7 @@ function testTable($title,$month,$concepts){
                     <div class="card-body">');
 
                     echo('<table class="table table-bordered">');
-                    echo('<tr><th>CUENTA</th><th>MONTO</th></tr>');
+                    echo('<tr><th>CUENTA</th><th>CONCEPTO</th><th>MONTO</th></tr>');
 
                     $total=0;
                     foreach ($tablaCuentas as $fila) {
