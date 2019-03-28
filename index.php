@@ -42,7 +42,6 @@ function testTable($title,$month){
 
 
     echo('<div class="container-fluid">
-    <div class="row">
         <div class="col-6">
             <!-- Area Chart -->
             <div class="card shadow mb-4">
@@ -67,13 +66,15 @@ function testTable($title,$month){
 
     echo('                
         </div>
-    </div>
 </div>');
 
 
 }
 
+
+echo('<div class="row">');
 testTable('ok','1');
+echo('</div>');
 
 ?>
 
