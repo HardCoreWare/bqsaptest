@@ -1,12 +1,10 @@
 
-            
 <?php
 
 require_once 'libs/BigQuery.php' ;
 
 $bigQuery= new BigQuery('informe-211921');
 
-function testTable($month){
 
     $dml = "SELECT DISTINCT(HKONT) AS CUENTAS FROM `informe-211921.BALANZA.BSEG_2019_'.$month.'` WHERE KOSTL IN('1020100303','5020100303') AND SUBSTR(HKONT,1,1) = '6'";
 
@@ -43,9 +41,6 @@ function testTable($month){
 
     echo('</table>');
 
-}
-
-testTable('1');
 
 ?>
 
