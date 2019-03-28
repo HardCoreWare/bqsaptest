@@ -53,7 +53,7 @@ function testTable($title,$month){
                 </div>
                     <div class="card-body">');
 
-                    echo('<table class="table table-striped">');
+                    echo('<table class="table table-bordered">');
                     echo('<tr><th>CUENTA</th><th>MONTO</th></tr>');
 
                     $total=0;
