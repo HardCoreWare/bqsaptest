@@ -91,7 +91,15 @@ function testTable($title,$month,$concepts){
 
                         echo('<tr>');
                         echo('<td>'.$fila['CUENTA'].'</td>');
-                        echo('<td>'.$concepts[$fila['CUENTA']].'</td>');
+
+                        if(isset($concepts[$fila['CUENTA']])){
+
+                            echo('<td>'.$concepts[$fila['CUENTA']].'</td>');
+
+                        }
+                        else{
+                            echo('<td>NULO</td>');
+                        }
                         echo('<td>'.$fila['MONTO'].'</td>');
                         echo('</tr>');
 
