@@ -46,6 +46,7 @@ $conceptos=[
 ];
 
 
+//6491050000
 
 function testTable($title,$month,$concepts){
 
@@ -98,7 +99,7 @@ function testTable($title,$month,$concepts){
 
                     }
 
-                    echo('<tr><th>TOTAL</th><th>'.strval($total).'</th></tr>');
+                    echo('<tr><th>TOTAL</th><th>_</th><th>'.strval($total).'</th></tr>');
                     $total=0;
 
                     echo('</table>');
